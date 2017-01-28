@@ -1,13 +1,24 @@
 <style>
+
+  .bar{
+    fill: steelblue;
+  }
+
+  .bar:hover{
+    fill: brown;
+  }
+
   .axis {
     font: 10px sans-serif;
   }
+
   .axis path,
   .axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
   }
+
 </style>
 
 <table>
@@ -40,5 +51,11 @@
 <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
 
 <%= javascript_tag do %>
+  var data = $("#bar-chart").data("user-signups");
+  console.log(data);
+
+  d3.select('#user-signups').selectAll('p').data(data).enter().append('p');
+
+  d3.selectAll('p').text(function(d, i) { return d.date})
 
 <% end %>
