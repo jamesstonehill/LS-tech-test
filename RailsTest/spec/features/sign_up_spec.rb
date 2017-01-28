@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Logging in', type: :feature do
+RSpec.feature 'Signing up', type: :feature do
   scenario 'A user signs up' do
     visit '/'
 
