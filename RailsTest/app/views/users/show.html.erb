@@ -1,0 +1,20 @@
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Name</th>
+    <th>Favorite Game</th>
+    <th>Action</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.email %></td>
+      <td><%= user.name %></td>
+      <td><%= user.favorite_game %></td>
+      <td><%= "LINK GOES HERE" %></td>
+    </tr>
+  <% end %>
+
+</table>
