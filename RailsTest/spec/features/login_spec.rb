@@ -6,14 +6,12 @@ RSpec.feature 'Logging in', type: :feature do
 
     click_link 'Sign up'
 
-    expect(current_path).to eq '/sign_up'
+    expect(current_path).to eq '/users/sign_up'
 
     user_email = 'test@example.com'
-    user_name = 'John Smith'
     user_password = 'Password!'
 
     fill_in 'user_email', with: user_email
-    fill_in 'user_name', with: user_name
     fill_in 'user_password', with: user_password
     fill_in 'user_password_confirmation', with: user_password
     click_button 'Sign up'
@@ -24,7 +22,6 @@ RSpec.feature 'Logging in', type: :feature do
     expect(page).to have_text('Email')
     expect(page).to have_text(user_email)
     expect(page).to have_text('Name')
-    expect(page).to have_text(user_name)
     expect(page).to have_text('Favorite Game')
     expect(page).to have_text('Action')
     expect(page).to have_link('Edit')
