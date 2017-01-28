@@ -1,3 +1,15 @@
+<style>
+  .axis {
+    font: 10px sans-serif;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+</style>
+
 <table>
   <tr>
     <th>ID</th>
@@ -16,3 +28,17 @@
     </tr>
   <% end %>
 </table>
+
+<div id="user-signups" class="bar-chart" >
+  <!-- using d3 to append the bar chart to this element -->
+</div>
+
+<%= content_tag :div, id: "bar-chart", data: {user_signups: @data} do %>
+<% end %>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+
+<%= javascript_tag do %>
+
+<% end %>
