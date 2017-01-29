@@ -4,12 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validate :password_complexity
 
-   validate :password_complexity
-
-   def password_complexity
-     if password.present? && !password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*(_|[^\w])).+$/)
-       errors.add :password, "must include at least one lowercase letter, one uppercase letter, and one character"
-     end
-   end
+  def password_complexity
+    if password.present? && !password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*(_|[^\w])).+$/)
+      errors.add :password, "must include at least one lowercase letter, one uppercase letter, and one character"
+    end
+  end
 end
