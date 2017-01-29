@@ -1,6 +1,3 @@
-// this includes the css for the bar chart
-// require barChart
-
 var data = $("#bar-chart").data("user-signups");
 console.log(data);
 
@@ -32,9 +29,11 @@ var svg = d3.select("#bar-chart").append("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+  var formatDate = d3.time.format("%Y-%m-%d");
+
+// replace the date with the formatted date
   data.forEach(function(d) {
-      d.date = d.date;
-      d.count = +d.count;
+      d.date = formatDate(new Date(d.date));
   });
 
 // scale the range of the data
