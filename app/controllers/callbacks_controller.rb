@@ -7,4 +7,9 @@ class CallbacksController < Devise::OmniauthCallbacksController
       flash[:error] = "GitHub sign in did not work."
     end
   end
+
+  def failure
+    flash[:error] = "Failure in Omniauth login"
+    redirect_to root_path
+  end
 end
