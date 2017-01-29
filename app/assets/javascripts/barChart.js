@@ -1,5 +1,4 @@
 var data = $("#bar-chart").data("user-signups");
-console.log(data);
 
 // set the dimensions of the canvas
 var margin = {top: 20, right: 20, bottom: 70, left: 40},
@@ -29,7 +28,7 @@ var svg = d3.select("#bar-chart").append("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-  var formatDate = d3.time.format("%Y-%m-%d");
+var formatDate = d3.time.format("%Y-%m-%d");
 
 // replace the date with the formatted date
   data.forEach(function(d) {

@@ -45,6 +45,7 @@ class UsersController < ApplicationController
       data.append('date' => day, 'count' => created_at_days.count(day))
     end
 
+    # e.x. return: [{date: 01/01/2017, count: 4},{date: 01/02/2017, count: 4}]
     data.to_json
   end
 
