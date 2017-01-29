@@ -5,3 +5,10 @@ def sign_up(fields)
   fill_in 'user_password_confirmation', with: fields[:password_confirmation] || fields[:password]
   click_button 'Sign up'
 end
+
+def log_in(fields)
+  visit new_user_session_path
+  fill_in 'user_email', with: fields[:email]
+  fill_in 'user_password', with: fields[:password]
+  click_button 'Log in'
+end
