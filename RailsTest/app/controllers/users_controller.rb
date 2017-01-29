@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     # selects all users and orders them by id
     @users = User.order(:id)
 
-    @data = format_data_to_json_for(@users)
+    @data = get_sign_in_data_as_json
   end
 
   def edit
@@ -27,8 +27,8 @@ class UsersController < ApplicationController
 
   private
 
-  def format_data_to_json_for(input_users)
-    users = input_users
+  def get_sign_in_data_as_json
+    users = User.all
 
     data = []
     created_at_days = []
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     unique_days = created_at_days.uniq
 
     unique_days.each do |day|
-      data.append({"date" => day, "count" => created_at_days.count(day) })
+      data.append('date' => day, 'count' => created_at_days.count(day))
     end
 
     data.to_json
