@@ -17,12 +17,9 @@
   <% end %>
 </table>
 
-<div id="user-signups" class="bar-chart" >
-  <!-- using d3 to append the bar chart to this element -->
-</div>
+<script src="https://d3js.org/d3.v3.min.js"></script>
 
 <!-- adding data to the #user-signups div -->
 <%= content_tag :div, id: "bar-chart", data: {user_signups: @data} do %><% end %>
 
-<%= javascript_include_tag "d3.v3"  %>
 <%= javascript_include_tag "barChart"  %>
