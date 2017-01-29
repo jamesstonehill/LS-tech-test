@@ -1,3 +1,6 @@
+// this includes the css for the bar chart
+// require barChart
+
 var data = $("#bar-chart").data("user-signups");
 console.log(data);
 

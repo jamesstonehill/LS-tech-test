@@ -1,29 +1,3 @@
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
-
-<style>
-
-  .bar{
-    fill: steelblue;
-  }
-
-  .bar:hover{
-    fill: brown;
-  }
-
-  .axis {
-    font: 10px sans-serif;
-  }
-
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-  }
-
-</style>
-
 <table>
   <tr>
     <th>ID</th>
@@ -47,9 +21,8 @@
   <!-- using d3 to append the bar chart to this element -->
 </div>
 
-<%= content_tag :div, id: "bar-chart", data: {user_signups: @data} do %>
-<% end %>
+<!-- adding data to the #user-signups div -->
+<%= content_tag :div, id: "bar-chart", data: {user_signups: @data} do %><% end %>
 
-<script type="text/javascript" src="./barChart.js"></script>
-
+<%= javascript_include_tag "d3.v3"  %>
 <%= javascript_include_tag "barChart"  %>
