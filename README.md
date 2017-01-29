@@ -7,7 +7,7 @@ This app was created as a submission for a tech test. The brief for this tech te
 ## Features
 
 ### Sign In / Sign Up
-The authentication for this app makes use of the `gem devise`. I chose not to implement a custom login system from scratch because the chances of having to do this in real commercial applications is very unlikely, and in order to make the login system secure I would write some kind of hashing algorithm, which is
+The authentication for this app makes use of the `gem devise`. I chose not to implement a custom login system from scratch because the chances of having to do this in real commercial applications is very unlikely, and without considerable time and effort, the system would probably be insecure somehow.
 
 #### Password reset
 Devise allows for password reset.
@@ -16,7 +16,7 @@ Devise allows for password reset.
 The app supports login with GitHub. By logging in with GitHub your email and name will be automatically stored in the app's database.
 
 ### Users Table
-At the root of the app is a table that displays five user fields, user id, email, name, favorite game, and a space for an edit action. The email is captured from the user sign up, but the name and favorite game fields will be blank to start off unless a user adds them through the edit action. 
+At the root of the app is a table that displays five user fields, user id, email, name, favorite game, and a space for an edit action. The email is captured from the user sign up, but the name and favorite game fields will be blank to start off unless a user adds them through the edit action.
 
 ### Bar Chart
 As part of the test, I was asked to
