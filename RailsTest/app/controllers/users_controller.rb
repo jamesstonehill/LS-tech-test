@@ -3,9 +3,10 @@ require 'json'
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    # selects all users and orders them by id
+    @users = User.order(:id)
 
-    @data = format_data_to_json
+    @data = format_data_to_json_for(@users)
   end
 
   def edit
@@ -19,26 +20,20 @@ class UsersController < ApplicationController
       flash[:notice] = "Information successfully updated for #{@user.name || @user.id }"
       redirect_to(users_path)
     else
-      flash[:error] = "Somethin went wrong with updating user #{@user.id}'s details"
+      flash[:error] = "Somethin went wrong with updating user #{@user.name || @user.id }'s details"
       render('edit')
     end
   end
 
   private
 
-  def format_data_to_json
-    users = User.all
+  def format_data_to_json_for(input_users)
+    users = input_users
 
-    # [{0 => {"day" => day, "count" => 3}}, {0 => {"day" => day, "count" => 3}}]
-    # [{"date"=> date, "count" => 1},{"date"=> date, "count" => 1}]}
     data = []
-
     created_at_days = []
 
     users.each do |user|
-      # set all date time objects to middle of day so they all users who signed
-      # up on the same date will appear in one bar
-
       day = user.created_at.middle_of_day
 
       created_at_days << day
