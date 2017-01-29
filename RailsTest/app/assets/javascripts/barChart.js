@@ -19,7 +19,7 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .ticks(2);
+    .ticks(d3.max(data, function(d) { return d.count; }));
 
 // add the SVG element
 var svg = d3.select("#bar-chart").append("svg")
