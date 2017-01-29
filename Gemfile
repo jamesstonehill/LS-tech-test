@@ -7,6 +7,8 @@ end
 
 gem 'devise'
 
+gem 'omniauth-github'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use postgresql as the database for Active Record
@@ -41,6 +43,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'dotenv-rails'
 end
 
 group :development do
