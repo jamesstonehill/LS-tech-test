@@ -28,7 +28,7 @@ var svg = d3.select("#bar-chart").append("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-var formatDate = d3.time.format("%Y-%m-%d");
+var formatDate = d3.time.format("%d-%m-%Y");
 
 // replace the date with the formatted date
   data.forEach(function(d) {
@@ -46,9 +46,9 @@ svg.append("g")
     .call(xAxis)
   .selectAll("text")
     .style("text-anchor", "end")
-    .attr("dx", "-.8em")
-    .attr("dy", "-.55em")
-    .attr("transform", "rotate(-90)" );
+    // .attr("dx", "-.8em")
+    // .attr("dy", "-.55em")
+    .attr("transform", "rotate(-45)" );
 
 svg.append("g")
     .attr("class", "y axis")
